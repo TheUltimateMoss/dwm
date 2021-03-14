@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel size of windows */
-static const unsigned int gappx     = 8;        /* gaps size between windows */
+static const unsigned int borderpx  = 1;        /* border pixel size of windows */
+static const unsigned int gappx     = 5;        /* gaps size between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-        //{ "Firefox",  NULL,       NULL,       0,            0,           -1 },
+	//{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "mpv",      NULL,       NULL,	      0,	    1,		 -1},
 };
 
@@ -70,13 +70,20 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *monitor[] = { "/usr/bin/htop", NULL };
 
 //sets alacritty as the default terminal
-static const char *termcmd[] = { "alacritty", NULL };
+//static const char *termcmd[] = { "alacritty", NULL };
 
 //sets st as the default terminal
-//static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 //sets urxvt as the default terminal
 //static const char *termcmd[]  = { "urxvt", NULL };
+
+// screenshot test
+static const char *scrn[] = {"xfce4-screenshooter", NULL };
+
+
+
+
 
 //volume controls
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
@@ -89,6 +96,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,			XK_s,	   spawn,	   {.v = scrn} },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
