@@ -78,7 +78,10 @@ static const char *termcmd[]  = { "st", NULL };
 //sets urxvt as the default terminal
 //static const char *termcmd[]  = { "urxvt", NULL };
 
-// screenshot test
+//sets firefox as the default browser
+static const char *browser[] = { "firefox", NULL };
+
+// screenshot
 static const char *scrn[] = {"xfce4-screenshooter", NULL };
 
 
@@ -94,9 +97,10 @@ static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL
 static char *endx[] = { "/bin/sh", "-c", "endx", "externalpipe", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,			XK_s,	   spawn,	   {.v = scrn} },
+	{ MODKEY,                       XK_d,      spawn,          	{.v = dmenucmd } },
+	{ MODKEY,	                XK_Return, spawn,		{.v = termcmd } },
+	{ MODKEY,			XK_s,	   spawn,		{.v = scrn} },
+	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = browser} },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
