@@ -67,7 +67,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 //static const char *filemanager[] = { "
 //launches htop
-static const char *monitor[] = { "/usr/bin/htop", NULL };
+// static const char *monitor[] = { "/usr/bin/htop", NULL };
 
 //sets alacritty as the default terminal
 //static const char *termcmd[] = { "alacritty", NULL };
@@ -94,7 +94,7 @@ static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute
 static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
 
 #include "shiftview.c"
-static char *endx[] = { "/bin/sh", "-c", "endx", "externalpipe", NULL };
+// static char *endx[] = { "/bin/sh", "-c", "endx", "externalpipe", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          	{.v = dmenucmd } },
